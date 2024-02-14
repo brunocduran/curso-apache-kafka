@@ -1,8 +1,11 @@
 package br.com.paymentservice.model;
 
 import lombok.Getter;
+import lombok.ToString;
+
 import java.io.Serializable;
 
+@ToString
 @Getter
 public class Payment implements Serializable {
 

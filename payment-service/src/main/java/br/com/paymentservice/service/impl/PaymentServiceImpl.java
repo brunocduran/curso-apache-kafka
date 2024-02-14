@@ -20,7 +20,7 @@ public class PaymentServiceImpl implements PaymentService {
     @SneakyThrows
     @Override
     public void sendPayment(Payment payment) {
-        log.info("Recebi o pagamento {}", payment);
+        log.info("Recebi o pagamento {}", payment.toString());
         Thread.sleep(1000);
 
         log.info("Enviando pagamento...");

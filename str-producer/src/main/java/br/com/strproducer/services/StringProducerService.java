@@ -15,7 +15,7 @@ public class StringProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message){
-        CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send("str-topic", message);
+        /*CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send("str-topic", message);
 
         future.whenComplete((result, ex) -> {
             if (ex != null) {
@@ -28,6 +28,9 @@ public class StringProducerService {
                     result.getRecordMetadata().partition(),
                     result.getRecordMetadata().offset()
             );
-        });
+        });*/
+
+        log.info("Send message {}", message);
+        kafkaTemplate.send("str-topic", message);
     }
 }
